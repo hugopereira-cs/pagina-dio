@@ -1,17 +1,13 @@
 import { Button } from '../../components/Button/Button';
+import { Header } from '../../components/Header/Header';
 
-
-function App() {
-
-
+export function App() {
   return (
     <>
-      <h1>Hello, World!</h1>
+      <Header />
       <Button>Teste 1</Button>
       <Button variant="secondary">Teste 1</Button>
       <p>Olá!</p>
     </>
-  )
+  );
 }
-
-export default App
