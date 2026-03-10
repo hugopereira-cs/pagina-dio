@@ -24,8 +24,8 @@ export function Header() {
         </Row>
         <Row>
           <MenuRight href="#">Home</MenuRight>
-          <Button>Entrar</Button>
-          <Button>Cadastrar</Button>
+          <Button title="Entrar" />
+          <Button title="Cadastrar" />
         </Row>
       </Container>
     </Wrapper>

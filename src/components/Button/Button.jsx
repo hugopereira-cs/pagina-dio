@@ -1,9 +1,9 @@
 import { ButtonContainer } from './Button.styles';
 
-export function Button({ children, variant = 'primary', onClick }) {
+export function Button({ title, variant = 'primary', onClick }) {
   return (
-    <ButtonContainer variant={variant} onClick={onClick}>
-      {children}
+    <ButtonContainer title={title} variant={variant} onClick={onClick}>
+      {title}
     </ButtonContainer>
   );
 }
