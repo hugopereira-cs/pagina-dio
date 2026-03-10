@@ -4,7 +4,7 @@ import { Header } from '../../components/Header/Header';
 
 import { Container, TextContent, Title, TitleHighlight } from './styles';
 
-export function App() {
+export function Home() {
   return (
     <>
       <Header />

@@ -16,10 +16,12 @@ export const ButtonContainer = styled.button`
       height: 33px;
       background: #e4105d;
       color: #1e192c;
+      transition: transform 0.5s ease;
 
       &:hover {
         opacity: 0.8;
         cursor: pointer;
+        transform: scale(1.01);
       }
 
       &::after {
