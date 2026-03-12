@@ -1,4 +1,5 @@
 import { Mail, Lock } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/Button/Button';
 import { Header } from '../../components/Header/Header';
 import { Input } from '../../components/Input/Input';
@@ -17,6 +18,12 @@ import {
 } from './styles';
 
 export function Login() {
+  const navigate = useNavigate();
+
+  const handleClickSignIn = () => {
+    navigate('/feed');
+  };
+
   return (
     <>
       <Header />
@@ -34,7 +41,12 @@ export function Login() {
             <Form>
               <Input placeHolder="email" leftIcon={<Mail size={20} />} />
               <Input placeHolder="Senha" type="password" leftIcon={<Lock size={20} />} />
-              <Button title="Entrar" variant="secondary" />
+              <Button
+                title="Entrar"
+                variant="secondary"
+                onClick={handleClickSignIn}
+                type="button"
+              />
             </Form>
             <Row>
               <EsqueciText>Esqueci minha senha</EsqueciText>
