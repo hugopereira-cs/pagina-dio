@@ -32,7 +32,11 @@ export function Login() {
 
   const { control, handleSubmit, formState: { errors, isValid } } = useForm({
     resolver: yupResolver(schema),
-    mode: 'onChange'
+    mode: 'onChange',
+    defaultValues: {
+      email: '',
+      password: ''
+    }
   });
 
   console.log(isValid, errors);
@@ -58,8 +62,8 @@ export function Login() {
             <TitleLogin>Faça seu cadastro</TitleLogin>
             <SubTitleLogin>Faça seu login e make the change.</SubTitleLogin>
             <Form onSubmit={handleSubmit(onSubmit)}>
-              <Input control={control} name="email" errorMessage={errors.email.message} placeholder="email" leftIcon={<Mail size={20} />} />
-              <Input control={control} name="password" placeholder="Senha" type="password" leftIcon={<Lock size={20} />} />
+              <Input control={control} name="email" errorMessage={errors?.email?.message} placeholder="email" leftIcon={<Mail size={20} />} />
+              <Input control={control} name="password" errorMessage={errors?.password?.message} placeholder="Senha" type="password" leftIcon={<Lock size={20} />} />
               <Button title="Entrar" variant="secondary" type="submit" />
             </Form>
             <Row>
