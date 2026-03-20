@@ -42,8 +42,14 @@ export function Login() {
 
   const onSubmit = async (formData) => {
     try {
-      const { data } = await api.get(`users?email=${formData.email}&senha=${formData.senha}`);
-      if (data.length === 1) {
+      const { data } = await api.get(
+        `users?email=${encodeURIComponent(formData.email)}`
+      );
+      console.log(data);
+
+      const user = data.find((u) => u.senha === formData.password);
+
+      if (user) {
         navigate('/feed');
       } else {
         alert('Email ou senha inválidos');
