@@ -6,6 +6,7 @@ import { Input } from '../../components/Input/Input';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { api } from '../../services/api';
 
 import {
   Column,
@@ -30,21 +31,26 @@ const schema = yup
 export function Login() {
   const navigate = useNavigate();
 
-  const { control, handleSubmit, formState: { errors, isValid } } = useForm({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
     resolver: yupResolver(schema),
-    mode: 'onChange',
-    defaultValues: {
-      email: '',
-      password: ''
-    }
+    mode: 'onChange'
   });
 
-  console.log(isValid, errors);
-
-  const onSubmit = (data) => console.log(data);
-
-  const handleClickSignIn = () => {
-    navigate('/feed');
+  const onSubmit = async (formData) => {
+    try {
+      const { data } = await api.get(`users?email=${formData.email}&senha=${formData.senha}`);
+      if (data.length === 1) {
+        navigate('/feed');
+      } else {
+        alert('Email ou senha inválidos');
+      }
+    } catch {
+      alert('Houve um erro ao fazer login, tente novamente');
+    }
   };
 
   return (
@@ -62,8 +68,21 @@ export function Login() {
             <TitleLogin>Faça seu cadastro</TitleLogin>
             <SubTitleLogin>Faça seu login e make the change.</SubTitleLogin>
             <Form onSubmit={handleSubmit(onSubmit)}>
-              <Input control={control} name="email" errorMessage={errors?.email?.message} placeholder="email" leftIcon={<Mail size={20} />} />
-              <Input control={control} name="password" errorMessage={errors?.password?.message} placeholder="Senha" type="password" leftIcon={<Lock size={20} />} />
+              <Input
+                control={control}
+                name="email"
+                errorMessage={errors?.email?.message}
+                placeholder="email"
+                leftIcon={<Mail size={20} />}
+              />
+              <Input
+                control={control}
+                name="password"
+                errorMessage={errors?.password?.message}
+                placeholder="Senha"
+                type="password"
+                leftIcon={<Lock size={20} />}
+              />
               <Button title="Entrar" variant="secondary" type="submit" />
             </Form>
             <Row>

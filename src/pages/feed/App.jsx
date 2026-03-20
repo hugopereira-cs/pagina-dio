@@ -22,11 +22,31 @@ export function Feed() {
         </Column>
         <Column flex={1}>
           <TitleHighlight># RANKING TOP 5 DA SEMANA</TitleHighlight>
-          <UserInfo percentual={80} name="Hugo Pereira" image="https://avatars.githubusercontent.com/u/184418432?v=4" />
-          <UserInfo percentual={27} name="Hugo Pereira" image="https://avatars.githubusercontent.com/u/184418432?v=4" />
-          <UserInfo percentual={89} name="Hugo Pereira" image="https://avatars.githubusercontent.com/u/184418432?v=4" />
-          <UserInfo percentual={57} name="Hugo Pereira" image="https://avatars.githubusercontent.com/u/184418432?v=4" />
-          <UserInfo percentual={12} name="Hugo Pereira" image="https://avatars.githubusercontent.com/u/184418432?v=4" />
+          <UserInfo
+            percentual={80}
+            name="Hugo Pereira"
+            image="https://avatars.githubusercontent.com/u/184418432?v=4"
+          />
+          <UserInfo
+            percentual={27}
+            name="Hugo Pereira"
+            image="https://avatars.githubusercontent.com/u/184418432?v=4"
+          />
+          <UserInfo
+            percentual={89}
+            name="Hugo Pereira"
+            image="https://avatars.githubusercontent.com/u/184418432?v=4"
+          />
+          <UserInfo
+            percentual={57}
+            name="Hugo Pereira"
+            image="https://avatars.githubusercontent.com/u/184418432?v=4"
+          />
+          <UserInfo
+            percentual={12}
+            name="Hugo Pereira"
+            image="https://avatars.githubusercontent.com/u/184418432?v=4"
+          />
         </Column>
       </Container>
     </>
