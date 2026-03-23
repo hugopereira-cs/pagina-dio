@@ -1,16 +1,60 @@
-# React + Vite
+# Clone de Páginas do Site da DIO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é um clone de páginas do site da Digital Innovation One (DIO), desenvolvido como parte do curso de React da DIO. O objetivo foi recriar a interface e as funcionalidades de login, cadastro, home e feed, utilizando tecnologias modernas de desenvolvimento web.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O projeto foi construído com as seguintes tecnologias:
 
-## React Compiler
+-   **React:** Biblioteca para construção de interfaces de usuário.
+-   **Vite:** Ferramenta de build e desenvolvimento rápido.
+-   **Styled-components:** Para estilização dos componentes.
+-   **React Router Dom:** Para gerenciamento das rotas da aplicação.
+-   **React Hook Form:** Para criação e validação de formulários.
+-   **Yup:** Para validação de schemas de formulários.
+-   **Axios:** Para realizar requisições HTTP para a API.
+-   **JSON Server:** Para simular uma API REST.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚙️ Funcionalidades
 
-## Expanding the ESLint configuration
+-   Página de Home
+-   Página de Login
+-   Página de Cadastro
+-   Página de Feed (acessível após o login)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Instalação e Execução
+
+Para executar o projeto localmente, siga os passos abaixo:
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone <url-do-repositorio>
+    cd pagina-dio
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+3.  **Inicie o servidor da API:**
+    ```bash
+    npm run api
+    ```
+    O servidor da API estará disponível em `http://localhost:8001`.
+
+4.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
+    A aplicação estará disponível em `http://localhost:5173`.
+
+## 📜 Scripts Disponíveis
+
+No diretório do projeto, você pode executar os seguintes scripts:
+
+-   `npm run dev`: Inicia o servidor de desenvolvimento.
+-   `npm run build`: Compila o projeto para produção.
+-   `npm run lint`: Executa o linter para verificar o código.
+-   `npm run preview`: Inicia um servidor para visualizar a build de produção.
+-   `npm run api`: Inicia o servidor `json-server` para a API mock.
