@@ -1,4 +1,5 @@
 import { ButtonContainer } from './Button.styles';
+import PropTypes from 'prop-types';
 
 export function Button({ title, variant = 'primary', onClick }) {
   return (
@@ -7,3 +8,9 @@ export function Button({ title, variant = 'primary', onClick }) {
     </ButtonContainer>
   );
 }
+
+Button.propTypes = {
+  title: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf(['primary', 'secondary']),
+  onClick: PropTypes.func
+};

@@ -1,5 +1,6 @@
 import { Button } from '../Button/Button';
 import logo from '../../assets/logo-dio.png';
+import PropTypes from 'prop-types';
 import {
   BuscarInputContainer,
   Container,
@@ -42,3 +43,7 @@ export function Header({ autenticado }) {
     </Wrapper>
   );
 }
+
+Header.propTypes = {
+  autenticado: PropTypes.bool
+};

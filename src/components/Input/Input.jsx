@@ -1,5 +1,6 @@
 import { ErrorText, IconContainer, InputContainer, InputText } from './Input.styles';
 import { Controller } from 'react-hook-form';
+import PropTypes from 'prop-types';
 
 export function Input({ leftIcon, name, control, errorMessage, ...rest }) {
   return (
@@ -16,3 +17,10 @@ export function Input({ leftIcon, name, control, errorMessage, ...rest }) {
     </>
   );
 }
+
+Input.propTypes = {
+  leftIcon: PropTypes.element,
+  name: PropTypes.string.isRequired,
+  control: PropTypes.object.isRequired,
+  errorMessage: PropTypes.string
+};

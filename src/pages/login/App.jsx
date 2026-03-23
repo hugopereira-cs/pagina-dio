@@ -42,9 +42,7 @@ export function Login() {
 
   const onSubmit = async (formData) => {
     try {
-      const { data } = await api.get(
-        `users?email=${encodeURIComponent(formData.email)}`
-      );
+      const { data } = await api.get(`users?email=${encodeURIComponent(formData.email)}`);
       console.log(data);
 
       const user = data.find((u) => u.senha === formData.password);
