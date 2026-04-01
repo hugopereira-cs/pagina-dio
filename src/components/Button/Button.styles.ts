@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 
-export const ButtonContainer = styled.button`
+interface ButtonContainerProps {
+  $variant?: 'primary' | 'secondary';
+}
+
+export const ButtonContainer = styled.button<ButtonContainerProps>`
   background: #565656;
   border-radius: 22px;
   position: relative;
@@ -9,8 +13,8 @@ export const ButtonContainer = styled.button`
   min-width: 120px;
   width: 100%;
 
-  ${({ variant }) =>
-    variant !== 'primary' &&
+  ${({ $variant }) =>
+    $variant !== 'primary' &&
     css`
       min-width: 167px;
       height: 33px;

@@ -1,4 +1,4 @@
-import { ErrorText, IconContainer, InputContainer, InputText } from './Input.styles';
+import { ErrorText, IconContainer, InputContainer, InputText } from './Input.styles.js';
 import { Controller } from 'react-hook-form';
 import PropTypes from 'prop-types';
 

@@ -1,12 +1,12 @@
 import { Mail, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../../components/Button/Button';
-import { Header } from '../../components/Header/Header';
-import { Input } from '../../components/Input/Input';
+import { Button } from '../../components/Button/Button.js';
+import { Header } from '../../components/Header/Header.js';
+import { Input } from '../../components/Input/Input.js';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { api } from '../../services/api';
+import { api } from '../../services/api.js';
 
 import {
   Column,
@@ -19,7 +19,7 @@ import {
   Wrapper,
   SubTitleLogin,
   Form
-} from './styles';
+} from './styles.js';
 
 const schema = yup
   .object({

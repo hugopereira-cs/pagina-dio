@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import bannerImage from '../../assets/banner.png';
-import { Button } from '../../components/Button/Button';
-import { Header } from '../../components/Header/Header';
+import { Button } from '../../components/Button/Button.js';
+import { Header } from '../../components/Header/Header.js';
 
-import { Container, TextContent, Title, TitleHighlight } from './styles';
+import { Container, TextContent, Title, TitleHighlight } from './styles.js';
 
 export function Home() {
   const navigate = useNavigate();

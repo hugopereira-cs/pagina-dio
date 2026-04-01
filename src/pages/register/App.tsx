@@ -1,7 +1,7 @@
 import { User, Mail, Lock } from 'lucide-react';
-import { Button } from '../../components/Button/Button';
-import { Header } from '../../components/Header/Header';
-import { Input } from '../../components/Input/Input';
+import { Button } from '../../components/Button/Button.js';
+import { Header } from '../../components/Header/Header.js';
+import { Input } from '../../components/Input/Input.js';
 
 import {
   Column,
@@ -13,7 +13,7 @@ import {
   Wrapper,
   SubTitleLogin,
   Form
-} from './styles';
+} from './styles.js';
 
 export function Register() {
   return (

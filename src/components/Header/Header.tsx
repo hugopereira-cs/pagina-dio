@@ -1,4 +1,4 @@
-import { Button } from '../Button/Button';
+import { Button } from '../Button/Button.js';
 import logo from '../../assets/logo-dio.png';
 import PropTypes from 'prop-types';
 import {
@@ -10,7 +10,7 @@ import {
   Row,
   UserPicture,
   Wrapper
-} from './Header.styles';
+} from './Header.styles.js';
 
 export function Header({ autenticado }) {
   return (

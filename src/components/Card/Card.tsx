@@ -6,7 +6,7 @@ import {
   PostInfo,
   UserInfo,
   UserPicture
-} from './Card.styles';
+} from './Card.styles.js';
 import { ThumbsUp } from 'lucide-react';
 
 export function Card() {

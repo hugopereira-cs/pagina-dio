@@ -1,4 +1,4 @@
-import { Container, NameText, Progress, UserPicture } from './UserInfo.styles';
+import { Container, NameText, Progress, UserPicture } from './UserInfo.styles.js';
 import PropTypes from 'prop-types';
 
 export function UserInfo({ name, image, percentual }) {

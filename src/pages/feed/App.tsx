@@ -1,8 +1,8 @@
-import { Card } from '../../components/Card/Card';
-import { Header } from '../../components/Header/Header';
-import { UserInfo } from '../../components/UserInfo/UserInfo';
+import { Card } from '../../components/Card/Card.js';
+import { Header } from '../../components/Header/Header.js';
+import { UserInfo } from '../../components/UserInfo/UserInfo.js';
 
-import { Container, Column, Title, TitleHighlight } from './styles';
+import { Container, Column, Title, TitleHighlight } from './styles.js';
 
 export function Feed() {
   return (
