@@ -1,12 +1,12 @@
 import { Mail, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../../components/Button/Button.js';
-import { Header } from '../../components/Header/Header.js';
-import { Input } from '../../components/Input/Input.js';
+import { Button } from '../../components/Button/Button';
+import { Header } from '../../components/Header/Header';
+import { Input } from '../../components/Input/Input';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { api } from '../../services/api.js';
+import { api } from '../../services/api';
 
 import {
   Column,
@@ -19,7 +19,8 @@ import {
   Wrapper,
   SubTitleLogin,
   Form
-} from './styles.js';
+} from './styles';
+import type { FormDataProps } from './types';
 
 const schema = yup
   .object({
@@ -35,17 +36,17 @@ export function Login() {
     control,
     handleSubmit,
     formState: { errors }
-  } = useForm({
+  } = useForm<FormDataProps>({
     resolver: yupResolver(schema),
     mode: 'onChange'
   });
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (formData: FormDataProps) => {
     try {
       const { data } = await api.get(`users?email=${encodeURIComponent(formData.email)}`);
       console.log(data);
 
-      const user = data.find((u) => u.senha === formData.password);
+      const user = data.find((u: any) => u.senha === formData.password);
 
       if (user) {
         navigate('/feed');

@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Home } from './pages/Home/App.js';
-import { Login } from './pages/login/App.js';
-import { Feed } from './pages/feed/App.js';
-import { Register } from './pages/register/App.js';
-import { GlobalStyle } from './styles/global.js';
+import { Home } from './pages/Home/App';
+import { Login } from './pages/login/App';
+import { Feed } from './pages/feed/App';
+import { Register } from './pages/register/App';
+import { GlobalStyle } from './styles/global';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root') as Element | DocumentFragment ).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>

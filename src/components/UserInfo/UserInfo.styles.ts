@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import type { UserInfoProps, UserInfoStyle } from './types';
 
 export const Container = styled.div`
   display: flex;
@@ -6,7 +7,7 @@ export const Container = styled.div`
   margin-bottom: 24px;
 `;
 
-export const UserPicture = styled.img`
+export const UserPicture = styled.img<UserInfoProps>`
   width: 32px;
   height: 32px;
   border-radius: 22px;
@@ -23,7 +24,7 @@ export const NameText = styled.div`
   color: #fff;
 `;
 
-export const Progress = styled.div`
+export const Progress = styled.div<UserInfoStyle>`
   width: 180px;
   height: 6px;
   background-color: #fff;
@@ -35,7 +36,7 @@ export const Progress = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    width: ${({ percentual }) => percentual}%;
+    width: ${({ $percentual }) => $percentual}%;
     height: 6px;
     border-radius: 3px;
     background-color: #23dd7a;

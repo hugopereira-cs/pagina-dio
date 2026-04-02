@@ -1,7 +1,7 @@
 import { ButtonContainer } from './Button.styles';
-import { IButton } from './types';
+import type { ButtonProps } from './types.ts';
 
-export function Button({ title, variant = 'primary', onClick }: IButton) {
+export function Button({ title, variant = 'primary', onClick }: ButtonProps) {
   return (
     <ButtonContainer $variant={variant} onClick={onClick}>
       {title}

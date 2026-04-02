@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import type { ColunmProps } from './types';
 
 export const Container = styled.main`
   width: 100%;
@@ -31,7 +32,7 @@ export const TitleHighlight = styled.h3`
   margin-bottom: 24px;
 `;
 
-export const Column = styled.div`
+export const Column = styled.div<ColunmProps>`
   // Define a largura da coluna, dinamicamente, com base na prop 'flex'.
   flex: ${({ flex }) => flex};
   padding: 24px;

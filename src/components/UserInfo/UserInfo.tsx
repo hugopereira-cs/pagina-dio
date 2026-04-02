@@ -1,20 +1,14 @@
-import { Container, NameText, Progress, UserPicture } from './UserInfo.styles.js';
-import PropTypes from 'prop-types';
+import type { UserInfoProps } from './types.ts';
+import { Container, NameText, Progress, UserPicture } from './UserInfo.styles';
 
-export function UserInfo({ name, image, percentual }) {
+export function UserInfo({ name, image, percentual }: UserInfoProps) {
   return (
     <Container>
-      <UserPicture src={image} />
+      <UserPicture image={image} name={name} percentual={percentual} />
       <div>
         <NameText>{name}</NameText>
-        <Progress percentual={percentual} />
+        <Progress $percentual={percentual} />
       </div>
     </Container>
   );
 }
-
-UserInfo.propTypes = {
-  name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  percentual: PropTypes.number.isRequired
-};

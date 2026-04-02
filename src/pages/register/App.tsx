@@ -1,7 +1,10 @@
 import { User, Mail, Lock } from 'lucide-react';
-import { Button } from '../../components/Button/Button.js';
-import { Header } from '../../components/Header/Header.js';
-import { Input } from '../../components/Input/Input.js';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { Button } from '../../components/Button/Button';
+import { Header } from '../../components/Header/Header';
+import { Input } from '../../components/Input/Input';
 
 import {
   Column,
@@ -13,9 +16,26 @@ import {
   Wrapper,
   SubTitleLogin,
   Form
-} from './styles.js';
+} from './styles';
+
+const schema = yup.object({
+  name: yup.string().min(3, 'Nome muito curto').required('Campo obrigatório'),
+  email: yup.string().email('E-mail inválido').required('Campo obrigatório'),
+  password: yup.string().min(3, 'Senha muito curta').required('Campo obrigatório'),
+}).required();
 
 export function Register() {
+
+  const { control, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema),
+    mode: 'onChange',
+  });
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+    // Lógica de cadastro aqui
+  }
+
   return (
     <>
       <Header />
@@ -30,14 +50,28 @@ export function Register() {
           <Wrapper>
             <TitleLogin>Comece agora grátis</TitleLogin>
             <SubTitleLogin>Crie sua conta e make the change.</SubTitleLogin>
-            <Form>
-              <Input name="name" placeholder="Nome completo" leftIcon={<User size={20} />} />
-              <Input name="email" placeholder="E-mail" leftIcon={<Mail size={20} />} />
+            <Form onSubmit={handleSubmit(onSubmit)}>
+              <Input 
+                name="name" 
+                placeholder="Nome completo" 
+                leftIcon={<User size={20} />} 
+                control={control} 
+                errorMessage={errors?.name?.message} 
+              />
+              <Input 
+                name="email" 
+                placeholder="E-mail" 
+                leftIcon={<Mail size={20} />} 
+                control={control} 
+                errorMessage={errors?.email?.message} 
+              />
               <Input
                 name="password"
                 placeholder="Senha"
                 type="password"
                 leftIcon={<Lock size={20} />}
+                control={control}
+                errorMessage={errors?.password?.message}
               />
               <Button title="Criar minha conta" variant="secondary" type="submit" />
             </Form>

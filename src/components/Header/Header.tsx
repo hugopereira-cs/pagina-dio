@@ -1,6 +1,6 @@
-import { Button } from '../Button/Button.js';
+import { Button } from '../Button/Button';
 import logo from '../../assets/logo-dio.png';
-import PropTypes from 'prop-types';
+import type { HeaderProps } from './types.ts';
 import {
   BuscarInputContainer,
   Container,
@@ -10,9 +10,9 @@ import {
   Row,
   UserPicture,
   Wrapper
-} from './Header.styles.js';
+} from './Header.styles';
 
-export function Header({ autenticado }) {
+export function Header({ autenticado }: HeaderProps) {
   return (
     <Wrapper>
       <Container>
@@ -43,7 +43,3 @@ export function Header({ autenticado }) {
     </Wrapper>
   );
 }
-
-Header.propTypes = {
-  autenticado: PropTypes.bool
-};

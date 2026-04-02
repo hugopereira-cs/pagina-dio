@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components';
+import type { ButtonContainerStyles } from './types';
 
-interface ButtonContainerProps {
-  $variant?: 'primary' | 'secondary';
-}
-
-export const ButtonContainer = styled.button<ButtonContainerProps>`
+export const ButtonContainer = styled.button<ButtonContainerStyles>`
   background: #565656;
   border-radius: 22px;
   position: relative;
