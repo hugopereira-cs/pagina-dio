@@ -1,6 +1,5 @@
 import { Button } from '../Button/Button';
 import logo from '../../assets/logo-dio.png';
-import type { HeaderProps } from './types.ts';
 import {
   BuscarInputContainer,
   Container,
@@ -11,14 +10,21 @@ import {
   UserPicture,
   Wrapper
 } from './Header.styles';
+import { AuthContext } from '../../context/auth.tsx';
+import { useContext } from 'react';
+import { Link } from 'react-router';
 
-export function Header({ autenticado }: HeaderProps) {
+export function Header({}) {
+  const { user, handleLogout } = useContext(AuthContext);
+
   return (
     <Wrapper>
       <Container>
         <Row>
+          <Link to='/'>
           <img src={logo} alt="Logo da DIO" />
-          {autenticado ? (
+          </Link>
+          {user.id ? (
             <>
               <BuscarInputContainer>
                 <Input placeholder="Buscar..." />
@@ -29,13 +35,18 @@ export function Header({ autenticado }: HeaderProps) {
           ) : null}
         </Row>
         <Row>
-          {autenticado ? (
+          {user.id ? (
+          <>
             <UserPicture src="https://avatars.githubusercontent.com/u/184418432?v=4" />
+            <a href="#" onClick={handleLogout}>
+              Sair
+            </a>
+          </>
           ) : (
             <>
               <MenuRight href="#">Home</MenuRight>
-              <Button title="Entrar" />
-              <Button title="Cadastrar" />
+              <Button title="Entrar" variant="primary" />
+              <Button title="Cadastrar" variant="primary" />
             </>
           )}
         </Row>

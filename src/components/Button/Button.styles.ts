@@ -4,6 +4,7 @@ import type { ButtonContainerStyles } from './types';
 export const ButtonContainer = styled.button<ButtonContainerStyles>`
   background: #565656;
   border-radius: 22px;
+
   position: relative;
   color: #fff;
   padding: 2px 12px;
@@ -11,7 +12,7 @@ export const ButtonContainer = styled.button<ButtonContainerStyles>`
   width: 100%;
 
   ${({ $variant }) =>
-    $variant !== 'primary' &&
+    $variant === 'secondary' ?
     css`
       min-width: 167px;
       height: 33px;
@@ -35,5 +36,17 @@ export const ButtonContainer = styled.button<ButtonContainerStyles>`
         height: calc(100% + 10px);
         border-radius: 22px;
       }
-    `}
-`;
+    `: css`
+      border: 1px solid #000;
+      
+      transition: transform 0.5s ease;
+
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+        transform: scale(1.01);
+      }
+      `
+
+  }
+`
