@@ -1,12 +1,10 @@
 import { Mail, Lock } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/Button/Button';
 import { Header } from '../../components/Header/Header';
 import { Input } from '../../components/Input/Input';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useContext } from 'react';
 
 import {
   Column,
@@ -21,7 +19,7 @@ import {
   Form
 } from './styles';
 import type { FormDataProps } from './types';
-import { AuthContext } from '../../context/auth';
+import { useAuth } from '../../hooks/useAuth';
 
 const schema = yup
   .object({
@@ -31,7 +29,7 @@ const schema = yup
   .required();
 
 export function Login() {
-  const { handleLogin } = useContext(AuthContext);
+  const { handleLogin } = useAuth();
 
   const {
     control,

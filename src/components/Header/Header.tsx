@@ -10,12 +10,12 @@ import {
   UserPicture,
   Wrapper
 } from './Header.styles';
-import { AuthContext } from '../../context/auth.tsx';
-import { useContext } from 'react';
+
 import { Link } from 'react-router';
+import { useAuth } from '../../hooks/useAuth.ts';
 
 export function Header({}) {
-  const { user, handleLogout } = useContext(AuthContext);
+  const { user, handleLogout } = useAuth();
 
   return (
     <Wrapper>
